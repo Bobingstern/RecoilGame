@@ -16,6 +16,7 @@ public class CameraControl : MonoBehaviour
     Vector3 targetPos;
     public Skybox sky1;
     public Skybox sky2;
+    public Camera me;
     // Use this for initialization
     void Start()
     {
@@ -40,6 +41,13 @@ public class CameraControl : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
 
         }
+
+        float dist = Vector2.Distance(transform.position, target.transform.position);
+        if (dist > 5)
+        {
+            me.orthographicSize = dist;
+        }
+        
 
 
         if (transform.position.y > 300)

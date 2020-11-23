@@ -14,6 +14,8 @@ public class CameraControl : MonoBehaviour
     public GameObject target;
     public Vector3 offset;
     Vector3 targetPos;
+    public Skybox sky1;
+    public Skybox sky2;
     // Use this for initialization
     void Start()
     {
@@ -37,6 +39,18 @@ public class CameraControl : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
 
+        }
+
+
+        if (transform.position.y > 300)
+        {
+            sky1.enabled = false;
+            sky2.enabled = true;
+        }
+        else
+        {
+            sky2.enabled = false;
+            sky1.enabled = true;
         }
     }
 }

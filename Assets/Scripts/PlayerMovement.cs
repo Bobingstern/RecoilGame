@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public int ammo = 2;
     public AudioSource audio;
     public AudioSource audio2;
+    public AudioSource audio3;
     public bool click;
     public GameObject Bongcloud;
     public GameObject Red;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public int[] potsto;
     public float volume;
     public Slider vol;
+    public Slider volSFX;
     // Use this for initialization
     void Start()
     {
@@ -81,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
         volume = vol.value;
         audio.volume = volume;
         audio2.volume = volume;
+        audio.volume = volume;
+        audio3.volume = volSFX.value;
         paused = p.GetComponent<Pause>().paused;
 
 

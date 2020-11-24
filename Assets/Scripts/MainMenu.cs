@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public GameObject New;
     public GameObject Cont;
     public int[] bong;
+    public Slider volume;
 
     void Start()
     {
@@ -71,6 +73,22 @@ public class MainMenu : MonoBehaviour
 
             BinaryFormatter formatter = new BinaryFormatter();
             string path = Application.persistentDataPath + "/player.recoil";
+            FileStream stream = new FileStream(path, FileMode.Create);
+
+            formatter.Serialize(stream, position);
+            stream.Close();
+
+        }
+
+        if (volume != null)
+        {
+
+            position = new float[1];
+            position[0] = volume.value;
+            
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            string path = Application.persistentDataPath + "/volume.recoil";
             FileStream stream = new FileStream(path, FileMode.Create);
 
             formatter.Serialize(stream, position);

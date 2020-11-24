@@ -58,6 +58,21 @@ public class PlayerMovement : MonoBehaviour
                 stream.Close();
             }
         }
+
+        string pot = Application.persistentDataPath + "/volume.recoil";
+
+        if (File.Exists(pot))
+        {
+            
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(pot, FileMode.Open);
+                float[] data = formatter.Deserialize(stream) as float[];
+                vol.value = data[0];
+                stream.Close();
+            
+        }
+
+
     }
 
     // Update is called once per frame

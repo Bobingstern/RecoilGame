@@ -120,4 +120,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
+    }
 }

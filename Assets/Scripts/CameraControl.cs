@@ -14,8 +14,9 @@ public class CameraControl : MonoBehaviour
     public GameObject target;
     public Vector3 offset;
     Vector3 targetPos;
-    public Skybox sky1;
-    public Skybox sky2;
+    public GameObject sky;
+    public GameObject sky1;
+
     public Camera me;
     // Use this for initialization
     void Start()
@@ -52,13 +53,13 @@ public class CameraControl : MonoBehaviour
 
         if (transform.position.y > 300)
         {
-            sky1.enabled = false;
-            sky2.enabled = true;
+            sky.SetActive(true);
+            sky1.SetActive(false);
         }
         else
         {
-            sky2.enabled = false;
-            sky1.enabled = true;
+            sky1.SetActive(true);
+            sky.SetActive(false);
         }
     }
 }

@@ -125,4 +125,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
+
+    public void EE()
+    {
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
+    }
 }

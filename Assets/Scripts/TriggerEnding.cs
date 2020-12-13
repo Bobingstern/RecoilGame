@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RollCredits : MonoBehaviour
+public class TriggerEnding : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y + 0.002f);
+        
+    }
 
-        if (transform.position.y > 15)
-        {
-            SceneManager.LoadScene(3, LoadSceneMode.Single);
-        }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

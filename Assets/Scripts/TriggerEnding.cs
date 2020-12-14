@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TriggerEnding : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject Player;
     void Start()
     {
             
@@ -19,6 +20,8 @@ public class TriggerEnding : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //DontDestroyOnLoad(Player);
         SceneManager.LoadScene(2, LoadSceneMode.Single);
+
     }
 }

@@ -19,6 +19,7 @@ public class GroundDetection : MonoBehaviour
     {
         transform.position = new Vector2(boi.transform.position.x, boi.transform.position.y-0.26f);
         boi.GetComponent<PlayerMovement>().canYeet = Physics2D.OverlapCircle(transform.position, OK, groundLayer);
+
         if (boi.GetComponent<PlayerMovement>().canYeet)
         {
             boi.GetComponent<PlayerMovement>().ammo = 1;
@@ -26,4 +27,6 @@ public class GroundDetection : MonoBehaviour
     }
 
     
+
+
 }
